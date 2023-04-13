@@ -1,2 +1,3 @@
-# MC-Worlds
-동숲 단톡방에서 모인 사람들이 구성한 마크 세계입니다.
+version https://git-lfs.github.com/spec/v1
+oid sha256:f01d5bca29f24ec327d65719527c1dcbc6fdec02d2e918ad45e9e69a3a42a26a
+size 89
