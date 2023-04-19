@@ -5,7 +5,7 @@ import os
 from misc import configs
 
 ROOT_PATH = configs.ROOT_PATH
-LOG_PATH  = f'{ROOT_PATH}/project/MC-Worlds/bot/logs'
+LOG_PATH  = f'{ROOT_PATH}/MC-Worlds/bot/logs'
 
 today     = date.today().strftime('%Y-%m-%d')
 
