@@ -5,13 +5,15 @@
 - 김 탱코 (김 태유)
 
 ## 폴더 구성
-├── discord_bot.py  | 디스코드 봇  
-├── rcon.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 마인크래프트 rcon 코드  
-├── readme.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 리드미  
-├── logs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 로그 저장 폴더  
-├── misc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 유틸리티 코드 저장 폴더  
-│   ├── configs.py &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 설정 값들을 저장하고 있는 코드  
-│   ├── loggers.py &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;| 로그를 작성하는 로거를 가지고 있는 코드  
-│   └── utils.py &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|기타 유틸리티 코드   
-
+``` bash
+    ├── discord_bot.py
+    ├── logs
+    ├── misc
+    │   ├── configs.py
+    │   ├── loggers.py
+    │   └── utils.py
+    ├── rcon.py
+    ├── readme.md
+    └── tree.txt
+```
 
