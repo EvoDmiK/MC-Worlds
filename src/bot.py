@@ -6,7 +6,7 @@ import discord
 from misc import loggers, configs, rcon
 
 ROOT_PATH = configs.ROOT_PATH
-LOGGER    = loggers.logger
+LOGGER    = loggers.get_logger()
 CONFIG    = configs.CONFIG
 TOKEN     = CONFIG.bot_token
 
