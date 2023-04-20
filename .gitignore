@@ -1,3 +1,5 @@
 plugins/Items*.*
+**/**/*.json
+**/**/*-checkpoint.*
 **/**/*.pyc
 **/**/*.log
