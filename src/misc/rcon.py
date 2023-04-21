@@ -14,7 +14,8 @@ from misc import configs, loggers
 ## 테스트 코드
 # import configs, loggers
 
-ROOT_PATH = '/config/workspace'
+ROOT_PATH = configs.ROOT_PATH
+SAVE_PATH = f'{ROOT_PATH}/MC-Worlds/src/logs/jsons'
 
 class RconInterface:
 
@@ -82,42 +83,39 @@ class RconInterface:
 
 
     def who_is(self, player):
-        
+
         infos = self._command(f'whois {player}')
         infos = [info for info in infos[1:] if info != '']
         infos = [self._clear_minus(info.split(':')) for info in infos]
         infos = {k : v for k, v in infos}
 
+        try:
+            infos = infos if infos != {} else json.loads(open(f'{SAVE_PATH}/{player}.json', 'r').read())
+
+        except:
+            msg   = f'현재 {player}가 접속해 있지 않거나 {player}의 정보가 저장되어 있는 파일이 존재 하지 않습니다.'
+            infos = {'Nick' : msg}
+            self.LOGGER.error(msg)
+
         return infos
 
-
-    ## 현재 플레이어 정보를 저장하는 함수
+    ## 플레이어 정보를 저장하는 함수
     def save_info(self):
 
         try:
             _, players = self.num_players()
             
-            
             for player in players:
-                player_info = self._command(f'whois {player}')
+                player_info = self.who_is(player)
 
-                for infos in player_info:
-                    
-                    infos = [info for info in infos if info != '']
-                    infos = infos.replace(' ', '').split(':')
-
+                os.makedirs(SAVE_PATH, exist_ok = True)
+                with open(f'{SAVE_PATH}/{player}.json', 'w') as f:
+                    json.dump(player_info, f, indent = 2)
 
         except:
             self.LOGGER.info('현재 접속 중인 플레이어가 없습니다. 나중에 다시 요청바랍니다.')
             self.LOGGER.info(format_exc())
 
 
-
 if __name__ == '__main__':
-
     CONFIG      = configs.CONFIG
-
-    start_time = time.time()
-    mrcon = RconInterface(CONFIG.host, CONFIG.port, CONFIG.passwd, app='dummy')
-    mrcon.who_is()
-    print(time.time() - start_time)
