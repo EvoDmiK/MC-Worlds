@@ -5,6 +5,7 @@ plugins/Items*.*
 **/**/*.json
 
 ## 로그 파일 보호
+**/**/logs/*.*
 **/**/*.log
 **/**/*.zip
 
