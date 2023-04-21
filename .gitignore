@@ -7,7 +7,7 @@ plugins/Items*.*
 ## 로그 파일 보호
 **/**/logs/*.*
 **/**/*.log
-**/**/*.zip
+**/**/*_logs.zip
 
 ## 굳이 백업 안해도 되는 파일들
 **/**/*-checkpoint.*
