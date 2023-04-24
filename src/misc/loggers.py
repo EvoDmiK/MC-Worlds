@@ -34,6 +34,6 @@ def get_logger():
 
 
 if __name__ == '__main__':
-    logger = get_logger(app = 'dummy')
+    logger = get_logger()
     logger.info('server start!!')
 
