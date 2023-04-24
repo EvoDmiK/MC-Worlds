@@ -32,9 +32,8 @@ class RconInterface:
             self.LOGGER.error(f'서버에 연결 할 수 없었습니다. 설정값을 확인해주세요.')
             self.LOGGER.error(format_exc())
 
-    
     ## RCON에 명령어 전달해주는 함수
-    def _command(self, command):
+    def _command(self, command: str) -> str:
 
         command = self.con.command(command)
 
@@ -46,19 +45,24 @@ class RconInterface:
         return re.sub('§[a-zA-Z0-9]', '', command).split('\n')
 
 
-    def _only_digits(self, data):
+    ## 데이터에서 숫자만 추출해주는 함수
+    def _only_digits(self, data: str) -> list:
 
         ## 파라미터로 전달 받은 값에서 숫자만 추출한 값에서 첫 번째 값만 사용
         ## e.g) '현재 접속 중인 인원은 0/20명 입니다.' => ['0', '20'] => '0'
         return re.sub('[^0-9]', ' ', data).split()[0]
 
 
-    def _clear_minus(self, data):
+    ## 플레이어 정보를 가져왔을 때 2차원 배열에서 
+    ## 첫 번째 원소는 알파벳, 숫자만 추출하고, 두 번째 원소는 공백을 지워주는 함수
+    def _clear_minus(self, data : list) -> list:
+
+        ## e.g.) ['- Nick', ' DoveKim'] -> ['Nick', 'DoveKim']
         return [re.sub('[^a-zA-Z0-9]', '', data[0]), data[1].strip()]
 
 
     ## 현재 접속 중인 플레이어 수와 닉네임을 불러와주는 함수
-    def num_players(self):
+    def num_players(self) -> int:
         
         ## list 명령어를 통해서 서버에 들어와 있는 인원 수와 이름 정보 가져오기
         players = self._command('list')
@@ -82,7 +86,8 @@ class RconInterface:
             return num_players
 
 
-    def who_is(self, player):
+    ## 플레이어 정보를 불러오는 함수
+    def who_is(self, player : str) -> dict:
 
         infos = self._command(f'whois {player}')
         infos = [info for info in infos[1:] if info != '']
@@ -98,6 +103,7 @@ class RconInterface:
             self.LOGGER.error(msg)
 
         return infos
+
 
     ## 플레이어 정보를 저장하는 함수
     def save_info(self):
