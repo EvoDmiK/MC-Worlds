@@ -6,14 +6,26 @@
 
 ## 폴더 구성
 ``` bash
-    ├── discord_bot.py
+    ├── api.py
+    ├── bot.py
+    ├── experimental
+    │   ├── api_test.ipynb
+    │   ├── mc_map_test.ipynb
+    │   ├── misc
+    │   ├── rcon_test.ipynb
+    │   └── sh
     ├── logs
+    │   └── api
     ├── misc
-    │   ├── configs.py
-    │   ├── loggers.py
-    │   └── utils.py
-    ├── rcon.py
+    │   ├── configs.py
+    │   ├── loggers.py
+    │   ├── __pycache__
+    │   ├── rcon.py
+    │   └── utils.py
     ├── readme.md
-    └── tree.txt
+    ├── runapi.sh
+    └── web
+        ├── config
+        └── manage.py
 ```
 
