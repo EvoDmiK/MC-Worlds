@@ -22,3 +22,9 @@
 |ItemsAdder|[[SpigotMC]](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/)|
 |EssentialsXProtect|[[Bukkit.org]](https://dev.bukkit.org/projects/essentialsx/files/2730970)|
 |CMILib|[[SpigotMC]](https://www.spigotmc.org/resources/cmilib.87610/)|
+|Brewery|[[SpigotMC]](https://www.spigotmc.org/resources/brewery.3082/)|
+|ChestSort|[[SpigotMC]](https://www.spigotmc.org/resources/chestsort.106680/)|
+|ClearLag|[[SpigotMC]](https://www.spigotmc.org/resources/clearlag.104405/)|
+|LoneLibs|[[SpigotMC]](https://www.spigotmc.org/resources/lonelibs.75974/)|
+|ProtocolLib|[[SpigotMC]](https://www.spigotmc.org/resources/protocollib.1997/)|
+|Sittable|[[SpigotMC]](https://www.spigotmc.org/threads/sittable.584759/)|
