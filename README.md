@@ -13,7 +13,7 @@
 |:--:|:--:|
 |BlockProtection|[[SpigotMC]](https://www.spigotmc.org/threads/blockprotection.569200/)|
 |EssentialsX|[[SpigotMC]](https://www.spigotmc.org/threads/essentialsx.76168/)|
-|estate-market|[[SigotMC]](https://www.spigotmc.org/threads/estate-market.381201/)|
+|estate-market|[[SpigotMC]](https://www.spigotmc.org/threads/estate-market.381201/)|
 |Jobs|[[SpigotMC]](https://www.spigotmc.org/threads/jobs.334070/)|
 |MapModCompanion|[[SpigotMC]](https://www.spigotmc.org/threads/mapmodcompanion.572592/)|
 |ServerEssentials|[[SpigotMC]](https://www.spigotmc.org/threads/serveressentials.249568/)|
