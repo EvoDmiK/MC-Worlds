@@ -7,6 +7,10 @@
 |Minecraft|1.19.4|
 |PAPER|517|
 
+## 지도
+---
+![리마스터 월드 지도](./worlds/remastered/map.jpg)
+
 ## 플러그 인
 ---
 |이름 |출처|
