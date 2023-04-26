@@ -9,7 +9,7 @@
 
 ## 지도
 ---
-![리마스터 월드 지도](./worlds/remastered/map.jpg)
+![리마스터 월드 지도](./worlds/remastered/map.png)
 
 ## 플러그 인
 ---
