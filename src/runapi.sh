@@ -2,11 +2,11 @@
 
 ## ROOT_PATH, CONFIG_PATH 설정
 ROOT_PATH=/config/workspace/project
-CONFIG_PATH=$ROOT_PATH/utils/configs.json
+CONFIG_PATH=$ROOT_PATH/utils/config.json
 
 ## CONFIG 파일에 저장되어 있는 내부 포트 값을 불러와서
 ## 현재 실행되고 있는 프로세스에 내부 포트 값이 들어가는 항목이 있는지 확인
-int_port=$(cat ${CONFIG_PATH} | jq '.int_api_port')
+int_port=$(cat ${CONFIG_PATH} | jq '.mrcon_api_int_port')
 check=`ps -ef | grep ${int_port} | wc | awk '{print $1}'`
 
 ## 현재 실행되고 있는 프로세스에 api 내부 포트 값이 들어가는 항목이 있다면 넘어감.
@@ -56,7 +56,7 @@ else
     ## 로그 파일을 저장하는 디렉토리가 없는 경우
     else
         ## 로그 파일 디렉토리를 생성하고, 로그 파일의 인덱스 값을 000으로 설정
-        mkdir $LOG_PATH
+        mkdir -p $LOG_PATH
         echo "로그를 저장할 폴더가 생성되었습니다."
         idx='000'
     fi
