@@ -9,19 +9,19 @@ import re
 from mcrcon import MCRcon as mrcon
 
 ## 구현 모듈
-from misc import configs, loggers
+from misc import configs, logger
 
 ## 테스트 코드
 # import configs, loggers
 
 ROOT_PATH = configs.ROOT_PATH
-SAVE_PATH = f'{ROOT_PATH}/MC-Worlds/src/logs/jsons'
+SAVE_PATH = configs.DATA_PATH
 
 class RconInterface:
 
     def __init__(self, host, port, password):
 
-        self.LOGGER = loggers.get_logger()
+        self.LOGGER = logger.get_logger()
 
         ## RCON 서버에 접속해 주는 부분 (이게 되야 모든 코드가 돌아감,, 흑흑)
         self.con    = mrcon(host = host, port = port, password = password)
@@ -105,6 +105,7 @@ class RconInterface:
         return infos
 
 
+    
     ## 플레이어 정보를 저장하는 함수
     def save_info(self):
 
@@ -121,6 +122,7 @@ class RconInterface:
         except:
             self.LOGGER.info('현재 접속 중인 플레이어가 없습니다. 나중에 다시 요청바랍니다.')
             self.LOGGER.info(format_exc())
+
 
 
 if __name__ == '__main__':

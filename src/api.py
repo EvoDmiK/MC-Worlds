@@ -4,13 +4,13 @@ import os
 
 from fastapi import FastAPI
 
-from misc import configs
+from misc import configs, logger
 from misc.rcon import *
 
 ROOT_PATH = configs.ROOT_PATH
 CONFIG    = configs.CONFIG 
 PASSWD    = CONFIG.passwd
-LOGGER    = loggers.get_logger()
+LOGGER    = logger.get_logger()
 HOST      = CONFIG.host
 PORT      = CONFIG.port
 rcon      = RconInterface
