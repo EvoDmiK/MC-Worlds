@@ -2,14 +2,6 @@ from datetime import date
 import logging
 import os
 
-from misc import configs
-
-## 테스트 코드
-# import configs
-
-ROOT_PATH = configs.ROOT_PATH
-today     = date.today().strftime('%Y-%m-%d')
-
 def get_logger():
 
     ## INFO 이상의 로그만 출력
