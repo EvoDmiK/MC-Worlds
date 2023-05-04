@@ -2,7 +2,7 @@
 
 ## ROOT_PATH, CONFIG_PATH 설정
 ROOT_PATH=/config/workspace/project
-CONFIG_PATH=$ROOT_PATH/utils/config.json
+CONFIG_PATH=$ROOT_PATH/utils/configs/ports.json
 
 ## CONFIG 파일에 저장되어 있는 내부 포트 값을 불러와서
 ## 현재 실행되고 있는 프로세스에 내부 포트 값이 들어가는 항목이 있는지 확인
@@ -17,7 +17,7 @@ if [ $check -gt 1 ]; then
 else
 
     ## 로그파일을 저장할 경로 지정
-    LOG_PATH=${ROOT_PATH}/MC-Worlds/src/logs/api
+    LOG_PATH=${ROOT_PATH}/logs/api
 
     ## 코드가 저장되어 있는 working directory로 이동 
     echo "실행코드가 있는 곳으로 이동 \n"
@@ -30,7 +30,7 @@ else
     yesterday=$(date -d "yesterday" "+%Y-%m-%d")
 
     ## 어제 날짜의 로그 파일 압축
-    mkdir $LOG_PATH/${yesterday}_logs
+    mkdir -p $LOG_PATH/${yesterday}_logs
     mv $LOG_PATH/${yesterday}*.* $LOG_PATH/${yesterday}_logs
     zip -r $LOG_PATH/${yesterday}_logs.zip $LOG_PATH/${yesterday}_logs
     rm -rf $LOG_PATH/${yesterday}_logs

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_PATH=/config/workspace/project
-CONFIG_PATH=$ROOT_PATH/utils/configs.json
+CONFIG_PATH=$ROOT_PATH/utils/configs/ports.json
 
 int_port=$(cat ${CONFIG_PATH} | jq '.int_web_port')
 check=`ps -ef | grep ${int_port} | wc | awk '{print $1}'`
@@ -11,7 +11,7 @@ if [ $check -gt 1 ]; then
 
 else
 
-    LOG_PATH=${ROOT_PATH}/MC-Worlds/src/logs/web
+    LOG_PATH=${ROOT_PATH}/logs/web
 
     echo "실행코드가 있는 곳으로 이동 \n"
     cd ${ROOT_PATH}/MC-Worlds/src/web
@@ -22,7 +22,7 @@ else
     yesterday=$(date -d "yesterday" "+%Y-%m-%d")
 
 ## 어제 날짜의 로그 파일 압축
-    mkdir $LOG_PATH/${yesterday}_logs
+    mkdir -p $LOG_PATH/${yesterday}_logs
     mv $LOG_PATH/${yesterday}*.* $LOG_PATH/${yesterday}_logs
     zip -r $LOG_PATH/${yesterday}_logs.zip $LOG_PATH/${yesterday}_logs
     rm -rf $LOG_PATH/${yesterday}_logs
