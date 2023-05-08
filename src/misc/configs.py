@@ -4,10 +4,11 @@ import os
 
 from easydict import EasyDict as edict
 
-from misc import logger
+# from misc import logger
+import logger
 
 ROOT_PATH        = '/config/workspace/project'
-DATA_PATH        = f'{ROOT_PATH}/MC-Worlds/src/data/jsons'
+DATA_PATH        = f'{ROOT_PATH}/MC-Worlds/src/data'
 JSON_PATH        = f'{ROOT_PATH}/utils/configs'
 JSON_BACKUP_PATH = f'{ROOT_PATH}/BACKUPS/configs'
 LOGGER           = logger.get_logger()
@@ -38,6 +39,7 @@ def repair_json(json_path, ftype = 'config'):
 
     
     finally: return json_
+
 
 def get_config():
 
