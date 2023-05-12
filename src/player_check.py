@@ -36,12 +36,15 @@ def save_player_info():
     if num_players != 0:
         players = rcon.online_players()
 
+        print(players)
         for player in players:
 
             ## 플레이어 정보를 불러오는 함수
             player_info = rcon.who_is(player)
 
             time_interval = time.time() - player_info['latest_online']
+
+            print(player_info)
             print(f'time interval : {time_interval:.2f}')
 
             ## 처음 데이터를 저장하거나 30분에 한 번씩 저장하도록 설정

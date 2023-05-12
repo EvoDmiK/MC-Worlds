@@ -109,7 +109,9 @@ class RconInterface:
             ## 데이터를 처음 저장할때 마지막 로그인 시간을 현재로 저장하도록 설정
             infos['latest_online'] = infos['latest_online'] \
                                      if 'latest_online' in infos.keys() else time.time()
-
+            
+            print('latest_online' in infos.keys())
+            print(infos)
         except Exception as e:
             msg   = f'현재 {player}가 접속해 있지 않거나 {player}의 정보가 저장되어 있는 파일이 존재하지 않습니다.'
             infos = {'Nick' : msg}
@@ -122,7 +124,7 @@ class RconInterface:
     ## 현재 접속해 있는 플레이어들의 닉네임을 가져오는 함수
     def online_players(self) -> list:
 
-        clear_name  = lambda player: player.replace(' ', '').replace('[AFK]', '').split(':')[1].split(',')
+        clear_name  = lambda player: player.replace(' ', '').replace('[AFK]', '').split(':')[1].split(',')[0]
         players     = self._get_players()
         
         players = players[1:]
