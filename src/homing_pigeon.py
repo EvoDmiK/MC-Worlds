@@ -35,6 +35,19 @@ def restart_bot():
     os.execv(sys.executable, ['python'] + sys.argv)
 
 
+def try_or_except(message):
+
+    def wrapper(func):
+
+        try: 
+            func()
+
+        except Exception as e: 
+            LOGGER.error(f'[ERR.Dc.001] 메시지를 전송하지 못했습니다. {e}')
+
+    return wrapper
+
+
 ## 봇 기동 후 준비가 완료되었을 때 실행되는 함수
 @bot.event
 async def on_ready(): 
